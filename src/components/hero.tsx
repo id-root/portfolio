@@ -98,7 +98,7 @@ const TerminalWindow = () => {
     useEffect(() => {
         if (showPrompt && el.current) {
             const typed = new Typed(el.current, {
-                strings: ["./initiate_protocal.sh^1000"],
+                strings: ["./boot.sh^1000"],
                 typeSpeed: 50,
                 showCursor: false,
                 onComplete: () => {
