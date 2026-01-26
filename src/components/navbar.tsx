@@ -32,12 +32,12 @@ export const Navbar = () => {
                             key={item.href}
                             href={item.href}
                             className={`
-                                relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 group
+                                relative px-3 md:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 group
                                 ${isActive ? 'text-stone-900 dark:text-white bg-stone-900/5 dark:bg-white/10 shadow-sm dark:shadow-[0_0_15px_rgba(239,68,68,0.3)]' : 'text-stone-600 dark:text-slate-400 hover:text-stone-900 dark:hover:text-white hover:bg-stone-900/5 dark:hover:bg-white/5'}
                             `}
                         >
                             <item.icon className={`w-4 h-4 ${isActive ? 'text-neon-cyan' : 'text-stone-400 dark:text-slate-500 group-hover:text-neon-cyan transition-colors'}`} />
-                            <span>{item.name}</span>
+                            <span className="hidden md:inline">{item.name}</span>
                         </Link>
                     )
                 })}
@@ -60,4 +60,3 @@ export const Navbar = () => {
         </nav>
     );
 };
-
