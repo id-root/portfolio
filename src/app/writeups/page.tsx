@@ -7,31 +7,31 @@ export default function WriteupsPage() {
             title: "BreachBlocker-Unlocker",
             category: "Side Quest 4",
             date: "Dec 25, 2025",
-            tags: ["Cryptography", "Protocol Analysis"],
-            summary: "Comprehensive analysis of custom encryption protocol found in TryHackMe's Advent of Cyber 2025. Includes Python decryptor.",
+            tags: ["Web Exploitation", "Authentication Bypass"],
+            summary: "Extract multiple flags from different apps by chaining enumeration, logic flaws, and authentication bypass techniques to recover stolen funds.",
             link: "https://github.com/id-root/BreachBlocker-Unlocker"
         },
         {
             title: "Carrotbane-of-My-Existence",
             category: "Side Quest 3",
             date: "Dec 20, 2025",
-            tags: ["Reverse Engineering", "Binary Analysis"],
-            summary: "Extracting hidden flags from a stripped binary without execution. Walkthrough of static analysis with Ghidra.",
+            tags: ["AI", "SMTP"],
+            summary: "Understanding AI-powered applications, and chaining creative vulnerability discovery techniques.",
             link: "https://github.com/id-root/Carrotbane-of-My-Existence"
         },
         {
             title: "Scheme-Catcher",
             category: "Side Quest 2",
             date: "Dec 15, 2025",
-            tags: ["Forensics", "PCAP Analysis"],
-            summary: "Reconstructing the attack chain from PCAP data. Identifying C2 traffic and recovering exfiltrated credentials.",
+            tags: ["Binary Exploitation", "Reverse Engeneering"],
+            summary: "Extracting hidden flags from a stripped binary without execution. Walkthrough of dynamic analysis with gdb",
             link: "https://github.com/id-root/Scheme-Catcher"
         },
         {
             title: "Hoppers-Origin-Writeup",
             category: "Side Quest 0",
             date: "Dec 10, 2025",
-            tags: ["OSINT", "Reconnaissance"],
+            tags: ["Privilege escalation", "Active Directory"],
             summary: "Initial reconnaissance phase. tracking the 'Hopper' entity across multiple platforms to find the entry point.",
             link: "https://github.com/id-root/Hoppers-Origin-Writeup"
         }
