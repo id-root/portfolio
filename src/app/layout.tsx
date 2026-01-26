@@ -14,8 +14,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "VECTOR // Offensive Security Portfolio",
-    description: "Exploring cyber-space: Offensive security research, custom implant development, and adversary simulation by Vector.",
+    title: "Portfolio",
+    description: "A Student, learning offensive security, Waiting for AGI",
 };
 
 export default function RootLayout({
