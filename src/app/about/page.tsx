@@ -198,7 +198,7 @@ export default function AboutPage() {
                                 unoptimized
                             />
                             <div className="flex-1">
-                                <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">OSINT Course</div>
+                                <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">OSINT</div>
                                 <div className="text-sm text-stone-600 dark:text-slate-400">Open-source intelligence gathering</div>
                             </div>
                         </div>
@@ -213,7 +213,7 @@ export default function AboutPage() {
                                 unoptimized
                             />
                             <div className="flex-1">
-                                <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">API Hacking Course</div>
+                                <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">API Hacking</div>
                                 <div className="text-sm text-stone-600 dark:text-slate-400">API security testing methodology</div>
                             </div>
                         </div>
