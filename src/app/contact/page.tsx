@@ -53,6 +53,7 @@ export default function ContactInteractive() {
                         <li><span className="text-red-500">clear</span> - Clear terminal</li>
                         <li><span className="text-red-500">whoami</span> - Display user info</li>
                         <li><span className="text-red-500">github</span> - Open GitHub</li>
+                        <li><span className="text-red-500">sudo [cmd]</span> - Admin privileges</li>
                     </ul>
                 </div>
             );
@@ -67,6 +68,8 @@ export default function ContactInteractive() {
         } else if (trimmed === "github") {
             window.open("https://github.com/id-root", "_blank");
             output = <span className="text-green-500">Opening GitHub...</span>;
+        } else if (trimmed.startsWith("sudo")) {
+            output = <span className="text-stone-300">Permission denied: user &apos;guest&apos; is not in the sudoers file. This incident will be reported.</span>;
         } else if (trimmed === "") {
             output = null;
         }
@@ -96,7 +99,7 @@ export default function ContactInteractive() {
                     <div className="bg-[#1a1a1a] px-4 py-3 flex items-center justify-between border-b border-stone-800">
                         <div className="flex items-center gap-2">
                             <div className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"></div>
-                            <div className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"></div>
+                            <div className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors"></div>
                             <div className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors"></div>
                         </div>
                         <div className="text-xs text-stone-500 font-mono">guest@contacts:~</div>
@@ -117,19 +120,22 @@ export default function ContactInteractive() {
 
                         <div className="flex items-center gap-2">
                             <span className="text-green-500">guest@contacts:~$</span>
-                            <div className="relative flex-1">
+                            {/*  Relative container for input stacking */}
+                            <div className="relative flex-1 h-6">
+                                {/* LAYER 1: The real input (Invisible but functional) */}
                                 <input
                                     ref={inputRef}
                                     type="text"
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
                                     onKeyDown={handleKeyDown}
-                                    className="bg-transparent text-stone-300 outline-none w-full caret-transparent"
+                                    // CHANGE: text-transparent, caret-transparent, z-10
+                                    className="absolute inset-0 w-full h-full bg-transparent text-transparent caret-transparent outline-none z-10"
                                     autoFocus
                                     autoComplete="off"
                                 />
-                                {/* Custom Glitchy Caret */}
-                                <span className="absolute top-0 pointer-events-none text-stone-300 whitespace-pre">
+                                {/* LAYER 2: The visual output (Visible but non-interactive) */}
+                                <span className="absolute top-0 left-0 text-stone-300 pointer-events-none whitespace-pre z-0">
                                     {input}
                                     <span className="animate-pulse bg-red-500 text-black inline-block w-2.5 h-4 align-middle ml-1"> </span>
                                 </span>
