@@ -115,7 +115,7 @@ const TerminalWindow = () => {
     const [copied, setCopied] = useState(false);
 
     const handleCopyEmail = () => {
-        navigator.clipboard.writeText("vector@root.cyber"); // Placeholder email
+        navigator.clipboard.writeText("advent007@duck.com"); // Placeholder email
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
