@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/navbar";
 import { Shield } from "lucide-react";
-import Image from "next/image"; // Import the Next.js Image component
+import Image from "next/image";
+import { HoloCard } from "@/components/ui/holo-card";
 
 export default function AboutPage() {
     return (
@@ -128,95 +129,107 @@ export default function AboutPage() {
                     </h3>
 
                     <div className="grid md:grid-cols-2 gap-6">
-                        <div className="glass-card p-6 rounded-2xl border-l-4 border-red-500 flex items-center gap-4">
-                            <Image
-                                src="/badges/aoc2024.png"
-                                alt="Advent of Cyber 2024"
-                                width={80}
-                                height={80}
-                                className="object-contain flex-shrink-0"
-                                unoptimized
-                            />
-                            <div className="flex-1">
-                                <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">Advent of Cyber 2024</div>
-                                <div className="text-sm text-stone-600 dark:text-slate-400">Completed TryHackMe&apos;s annual event</div>
+                        <HoloCard className="rounded-2xl border-l-4 border-red-500 p-6">
+                            <div className="flex items-center gap-4 h-full">
+                                <Image
+                                    src="/badges/aoc2024.png"
+                                    alt="Advent of Cyber 2024"
+                                    width={80}
+                                    height={80}
+                                    className="object-contain flex-shrink-0"
+                                    unoptimized
+                                />
+                                <div className="flex-1">
+                                    <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">Advent of Cyber 2024</div>
+                                    <div className="text-sm text-stone-600 dark:text-slate-400">Completed TryHackMe&apos;s annual event</div>
+                                </div>
                             </div>
-                        </div>
+                        </HoloCard>
 
-                        <div className="glass-card p-6 rounded-2xl border-l-4 border-red-500 flex items-center gap-4">
-                            <Image
-                                src="/badges/aoc2025.png"
-                                alt="Advent of Cyber 2025"
-                                width={80}
-                                height={80}
-                                className="object-contain flex-shrink-0"
-                                unoptimized
-                            />
-                            <div className="flex-1">
-                                <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">Advent of Cyber 2025</div>
-                                <div className="text-sm text-stone-600 dark:text-slate-400">Completed TryHackMe&apos;s annual event</div>
+                        <HoloCard className="rounded-2xl border-l-4 border-red-500 p-6">
+                            <div className="flex items-center gap-4 h-full">
+                                <Image
+                                    src="/badges/aoc2025.png"
+                                    alt="Advent of Cyber 2025"
+                                    width={80}
+                                    height={80}
+                                    className="object-contain flex-shrink-0"
+                                    unoptimized
+                                />
+                                <div className="flex-1">
+                                    <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">Advent of Cyber 2025</div>
+                                    <div className="text-sm text-stone-600 dark:text-slate-400">Completed TryHackMe&apos;s annual event</div>
+                                </div>
                             </div>
-                        </div>
+                        </HoloCard>
 
-                        <div className="glass-card p-6 rounded-2xl border-l-4 border-red-500 flex items-center gap-4">
-                            <Image
-                                src="/badges/sidequest.png"
-                                alt="Side Quest 2025"
-                                width={80}
-                                height={80}
-                                className="object-contain flex-shrink-0"
-                                unoptimized
-                            />
-                            <div className="flex-1">
-                                <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">Advent of Cyber Side Quest 2025</div>
-                                <div className="text-sm text-stone-600 dark:text-slate-400">Completed advanced challenge track</div>
+                        <HoloCard className="rounded-2xl border-l-4 border-red-500 p-6">
+                            <div className="flex items-center gap-4 h-full">
+                                <Image
+                                    src="/badges/sidequest.png"
+                                    alt="Side Quest 2025"
+                                    width={80}
+                                    height={80}
+                                    className="object-contain flex-shrink-0"
+                                    unoptimized
+                                />
+                                <div className="flex-1">
+                                    <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">Advent of Cyber Side Quest 2025</div>
+                                    <div className="text-sm text-stone-600 dark:text-slate-400">Completed advanced challenge track</div>
+                                </div>
                             </div>
-                        </div>
+                        </HoloCard>
 
-                        <div className="glass-card p-6 rounded-2xl border-l-4 border-red-500 flex items-center gap-4">
-                            <Image
-                                src="/badges/pentest101.png"
-                                alt="Penetration 101"
-                                width={80}
-                                height={80}
-                                className="object-contain flex-shrink-0"
-                                unoptimized
-                            />
-                            <div className="flex-1">
-                                <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">Penetration 101</div>
-                                <div className="text-sm text-stone-600 dark:text-slate-400">Foundations of penetration testing</div>
+                        <HoloCard className="rounded-2xl border-l-4 border-red-500 p-6">
+                            <div className="flex items-center gap-4 h-full">
+                                <Image
+                                    src="/badges/pentest101.png"
+                                    alt="Penetration 101"
+                                    width={80}
+                                    height={80}
+                                    className="object-contain flex-shrink-0"
+                                    unoptimized
+                                />
+                                <div className="flex-1">
+                                    <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">Penetration 101</div>
+                                    <div className="text-sm text-stone-600 dark:text-slate-400">Foundations of penetration testing</div>
+                                </div>
                             </div>
-                        </div>
+                        </HoloCard>
 
-                        <div className="glass-card p-6 rounded-2xl border-l-4 border-red-500 flex items-center gap-4">
-                            <Image
-                                src="/badges/osint.png"
-                                alt="OSINT Course"
-                                width={80}
-                                height={80}
-                                className="object-contain flex-shrink-0"
-                                unoptimized
-                            />
-                            <div className="flex-1">
-                                <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">OSINT</div>
-                                <div className="text-sm text-stone-600 dark:text-slate-400">Open-source intelligence gathering</div>
+                        <HoloCard className="rounded-2xl border-l-4 border-red-500 p-6">
+                            <div className="flex items-center gap-4 h-full">
+                                <Image
+                                    src="/badges/osint.png"
+                                    alt="OSINT Course"
+                                    width={80}
+                                    height={80}
+                                    className="object-contain flex-shrink-0"
+                                    unoptimized
+                                />
+                                <div className="flex-1">
+                                    <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">OSINT</div>
+                                    <div className="text-sm text-stone-600 dark:text-slate-400">Open-source intelligence gathering</div>
+                                </div>
                             </div>
-                        </div>
+                        </HoloCard>
 
-                        <div className="glass-card p-6 rounded-2xl border-l-4 border-red-500 flex items-center gap-4">
-                            <Image
-                                src="/badges/apihacking.png"
-                                alt="API Hacking"
-                                width={80}
-                                height={80}
-                                className="object-contain flex-shrink-0"
-                                unoptimized
-                            />
-                            <div className="flex-1">
-                                <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">API Hacking</div>
-                                <div className="text-sm text-stone-600 dark:text-slate-400">API security testing methodology</div>
+                        <HoloCard className="rounded-2xl border-l-4 border-red-500 p-6">
+                            <div className="flex items-center gap-4 h-full">
+                                <Image
+                                    src="/badges/apihacking.png"
+                                    alt="API Hacking"
+                                    width={80}
+                                    height={80}
+                                    className="object-contain flex-shrink-0"
+                                    unoptimized
+                                />
+                                <div className="flex-1">
+                                    <div className="text-xl font-bold text-stone-900 dark:text-white mb-2">API Hacking</div>
+                                    <div className="text-sm text-stone-600 dark:text-slate-400">API security testing methodology</div>
+                                </div>
                             </div>
-                        </div>
+                        </HoloCard>
                     </div>
                 </section>
 
