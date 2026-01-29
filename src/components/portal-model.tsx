@@ -26,17 +26,20 @@ function Asset({ name }: { name: string }) {
         const materials = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
         
         materials.forEach((mat) => {
+          // FIXED: Cast to 'any' to avoid "Property 'map' does not exist on type 'Material'" error
+          const m = mat as any;
+
           // Force textures to use SRGBColorSpace to fix "washed out" colors
-          if (mat.map) {
-            mat.map.colorSpace = THREE.SRGBColorSpace;
-            mat.map.needsUpdate = true;
+          if (m.map) {
+            m.map.colorSpace = THREE.SRGBColorSpace;
+            m.map.needsUpdate = true;
           }
-          if (mat.emissiveMap) {
-            mat.emissiveMap.colorSpace = THREE.SRGBColorSpace;
-            mat.emissiveMap.needsUpdate = true;
+          if (m.emissiveMap) {
+            m.emissiveMap.colorSpace = THREE.SRGBColorSpace;
+            m.emissiveMap.needsUpdate = true;
           }
           // Ensure the material updates with new settings
-          mat.needsUpdate = true;
+          m.needsUpdate = true;
         });
       }
     });
