@@ -2,6 +2,7 @@ import { Navbar } from "@/components/navbar";
 import { Shield } from "lucide-react";
 import Image from "next/image";
 import { HoloCard } from "@/components/ui/holo-card";
+import { PortalCanvas } from "@/components/portal-model"; // Import the 3D component
 
 export default function AboutPage() {
     return (
@@ -13,13 +14,12 @@ export default function AboutPage() {
 
             <main className="pt-32 pb-20 px-6 max-w-4xl mx-auto relative z-10">
 
-                {/* Header */}
+                {/* Header Section */}
                 <div className="text-center mb-20">
-                    <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-stone-900 dark:text-white">
-                        Beyond the <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">Command Line.</span>
-                    </h1>
-                    <p className="text-stone-600 dark:text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                    {/* Replaced 'Beyond the Command Line' with 3D Model */}
+                    <PortalCanvas />
+                    
+                    <p className="text-stone-600 dark:text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed mt-4">
                         Hii I am Vector. Waiting for AGI... Exploring cybersecurity, automation, and open‑source learning not to arrive but to continue...
                     </p>
                 </div>
