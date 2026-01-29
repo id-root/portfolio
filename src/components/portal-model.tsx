@@ -2,8 +2,7 @@
 
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import { OrbitControls, Html, Center } from "@react-three/drei";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
+import { OBJLoader, MTLLoader } from "three-stdlib";
 import { Suspense, useMemo, useRef } from "react";
 import * as THREE from "three";
 
@@ -17,7 +16,33 @@ function Asset({ name }: { name: string }) {
     loader.setMaterials(materials);
   });
 
-  const clone = useMemo(() => obj.clone(), [obj]);
+  // FIXED: Traverse the model to correct texture color space
+  const clone = useMemo(() => {
+    const clonedObj = obj.clone();
+    clonedObj.traverse((child) => {
+      if ((child as THREE.Mesh).isMesh) {
+        const mesh = child as THREE.Mesh;
+        // Handle both single materials and arrays of materials
+        const materials = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+        
+        materials.forEach((mat) => {
+          // Force textures to use SRGBColorSpace to fix "washed out" colors
+          if (mat.map) {
+            mat.map.colorSpace = THREE.SRGBColorSpace;
+            mat.map.needsUpdate = true;
+          }
+          if (mat.emissiveMap) {
+            mat.emissiveMap.colorSpace = THREE.SRGBColorSpace;
+            mat.emissiveMap.needsUpdate = true;
+          }
+          // Ensure the material updates with new settings
+          mat.needsUpdate = true;
+        });
+      }
+    });
+    return clonedObj;
+  }, [obj]);
+
   return <primitive object={clone} />;
 }
 
@@ -57,10 +82,10 @@ export const PortalCanvas = () => {
       <Canvas camera={{ position: [0, 1.5, 6], fov: 45 }}>
         <Suspense fallback={<Html center className="text-terminal-red font-mono text-sm">LOADING...</Html>}>
           
-          {/* UPDATED: Ambient light boosted to 2.5 (High brightness) */}
+          {/* Ambient light */}
           <ambientLight intensity={1.5} /> 
 
-          {/* UPDATED: Directional lights boosted to 4.0 (Studio brightness) */}
+          {/* Directional lights */}
           <directionalLight position={[5, 10, 5]} intensity={4.0} color="#ffffff" />
           <directionalLight position={[-5, 5, -5]} intensity={4.0} color="#dbeafe" />
 
