@@ -51,16 +51,16 @@ export const Projects = () => {
             link: "https://github.com/id-root/spectre"
         },
         {
-            title: "vantage",
+            title: "Isotope",
             status: "POC",
-            version: "v0.1.0",
+            version: "v4.0.0",
             lang: "Rust",
             icon: Lock,
             color: "text-emerald-400",
             accent: "border-emerald-500/50",
             problem: "Communication metadata is vulnerable to analysis.",
             approach: "Tor Onion Services + Post-Quantum crypto.",
-            link: "https://github.com/id-root/vantage"
+            link: "https://github.com/id-root/isotope"
         }
     ];
 
