@@ -16,7 +16,7 @@ export default function AboutPage() {
 
                 {/* Header Section */}
                 <div className="text-center mb-20">
-                    {/* Replaced 'Beyond the Command Line' with 3D Model */}
+                
                     <PortalCanvas />
                     
                     <p className="text-stone-600 dark:text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed mt-4">
