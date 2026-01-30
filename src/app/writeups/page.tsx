@@ -5,7 +5,7 @@ export default function WriteupsPage() {
     const writeups = [
         {
             title: "BreachBlocker-Unlocker",
-            category: "Side Quest 4",
+            category: "TryHackMe",
             date: "Dec 25, 2025",
             tags: ["Web Exploitation", "Authentication Bypass"],
             summary: "Extract multiple flags from different apps by chaining enumeration, logic flaws, and authentication bypass techniques to recover stolen funds.",
@@ -13,7 +13,7 @@ export default function WriteupsPage() {
         },
         {
             title: "Carrotbane-of-My-Existence",
-            category: "Side Quest 3",
+            category: "TryHackMe",
             date: "Dec 20, 2025",
             tags: ["AI", "SMTP"],
             summary: "Understanding AI-powered applications, and chaining creative vulnerability discovery techniques.",
@@ -21,7 +21,7 @@ export default function WriteupsPage() {
         },
         {
             title: "Scheme-Catcher",
-            category: "Side Quest 2",
+            category: "TryHackMe",
             date: "Dec 15, 2025",
             tags: ["Binary Exploitation", "Reverse Engeneering"],
             summary: "Extracting hidden flags from a stripped binary without execution. Walkthrough of dynamic analysis with gdb",
@@ -29,7 +29,7 @@ export default function WriteupsPage() {
         },
         {
             title: "Hoppers-Origin-Writeup",
-            category: "Side Quest 0",
+            category: "TryHackMe",
             date: "Dec 10, 2025",
             tags: ["Privilege escalation", "Active Directory"],
             summary: "Initial reconnaissance phase. tracking the 'Hopper' entity across multiple platforms to find the entry point.",
@@ -51,7 +51,7 @@ export default function WriteupsPage() {
                         Research & <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">Writeups</span>
                     </h1>
                     <p className="text-stone-600 dark:text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-                        Detailed Write-Ups on TryHackMe CTFs.
+                        Detailed Research Papers & Write-Ups (CTFs).
                     </p>
                 </header>
 
