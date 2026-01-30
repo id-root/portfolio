@@ -5,8 +5,8 @@ export const Projects = () => {
         {
             title: "MultiLang-Evasion-Framework",
             status: "ACTIVE",
-            version: "v2.1.0",
-            lang: "C / Nim / Rust",
+            version: "v1.0.0",
+            lang: "Jinja / Python / ",
             icon: Shield,
             color: "text-neon-cyan",
             accent: "border-neon-cyan/50",
@@ -17,7 +17,7 @@ export const Projects = () => {
         {
             title: "sqli-hunter",
             status: "ACTIVE",
-            version: "v0.3.2",
+            version: "v6.0.0",
             lang: "Rust",
             icon: Database,
             color: "text-neon-purple",
@@ -30,7 +30,7 @@ export const Projects = () => {
             title: "LanDrop",
             status: "ACTIVE",
             version: "v1.0.0",
-            lang: "Python",
+            lang: "Go",
             icon: Radio,
             color: "text-blue-400",
             accent: "border-blue-500/50",
@@ -41,7 +41,7 @@ export const Projects = () => {
         {
             title: "spectre",
             status: "BETA",
-            version: "v0.9.1",
+            version: "v3.0.0",
             lang: "Rust",
             icon: Radio,
             color: "text-blue-400",
