@@ -5,7 +5,7 @@ export default function WriteupsPage() {
     const writeups = [
         {
             title: "BreachBlocker-Unlocker",
-            category: "TryHackMe",
+            category: "Write-up",
             date: "Dec 25, 2025",
             tags: ["Web Exploitation", "Authentication Bypass"],
             summary: "Extract multiple flags from different apps by chaining enumeration, logic flaws, and authentication bypass techniques to recover stolen funds.",
@@ -13,7 +13,7 @@ export default function WriteupsPage() {
         },
         {
             title: "Carrotbane-of-My-Existence",
-            category: "TryHackMe",
+            category: "Write-up",
             date: "Dec 20, 2025",
             tags: ["AI", "SMTP"],
             summary: "Understanding AI-powered applications, and chaining creative vulnerability discovery techniques.",
@@ -21,15 +21,15 @@ export default function WriteupsPage() {
         },
         {
             title: "Scheme-Catcher",
-            category: "TryHackMe",
+            category: "Write-up",
             date: "Dec 15, 2025",
             tags: ["Binary Exploitation", "Reverse Engeneering"],
             summary: "Extracting hidden flags from a stripped binary without execution. Walkthrough of dynamic analysis with gdb",
             link: "https://github.com/id-root/Scheme-Catcher"
         },
         {
-            title: "Hoppers-Origin-Writeup",
-            category: "TryHackMe",
+            title: "Hoppers-Origin",
+            category: "Write-up",
             date: "Dec 10, 2025",
             tags: ["Privilege escalation", "Active Directory"],
             summary: "Initial reconnaissance phase. tracking the 'Hopper' entity across multiple platforms to find the entry point.",
