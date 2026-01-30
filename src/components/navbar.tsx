@@ -10,7 +10,7 @@ export const Navbar = () => {
 
     const navItems = [
         { name: 'Projects', href: '/', icon: Terminal },
-        { name: 'TryHackMe write-up', href: '/writeups', icon: BookOpen },
+        { name: 'WhitePapers', href: '/writeups', icon: BookOpen },
         { name: 'About', href: '/about', icon: User },
     ];
 
