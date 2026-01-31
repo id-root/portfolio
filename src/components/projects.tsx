@@ -1,4 +1,5 @@
-import { ArrowUpRight, Github, Lock, Database, Radio, Shield } from "lucide-react";
+import { ArrowUpRight, Database, Lock, Radio, Shield } from "lucide-react";
+import { SiPython, SiJinja, SiRust, SiGo } from "react-icons/si";
 
 export const Projects = () => {
     const projects = [
@@ -6,7 +7,10 @@ export const Projects = () => {
             title: "MultiLang-Evasion-Framework",
             status: "ACTIVE",
             version: "v1.0.0",
-            lang: "Jinja / Python / ",
+            stack: [
+                { icon: SiJinja, color: "text-red-500" },
+                { icon: SiPython, color: "text-yellow-500" }
+            ],
             icon: Shield,
             color: "text-neon-cyan",
             accent: "border-neon-cyan/50",
@@ -18,7 +22,9 @@ export const Projects = () => {
             title: "sqli-hunter",
             status: "ACTIVE",
             version: "v6.0.0",
-            lang: "Rust",
+            stack: [
+                { icon: SiRust, color: "text-orange-500" }
+            ],
             icon: Database,
             color: "text-neon-purple",
             accent: "border-neon-purple/50",
@@ -30,7 +36,9 @@ export const Projects = () => {
             title: "LanDrop",
             status: "ACTIVE",
             version: "v1.0.0",
-            lang: "Go",
+            stack: [
+                { icon: SiGo, color: "text-cyan-400" }
+            ],
             icon: Radio,
             color: "text-blue-400",
             accent: "border-blue-500/50",
@@ -42,7 +50,9 @@ export const Projects = () => {
             title: "spectre",
             status: "BETA",
             version: "v3.0.0",
-            lang: "Rust",
+            stack: [
+                { icon: SiRust, color: "text-orange-500" }
+            ],
             icon: Radio,
             color: "text-blue-400",
             accent: "border-blue-500/50",
@@ -54,7 +64,9 @@ export const Projects = () => {
             title: "Isotope",
             status: "POC",
             version: "v4.0.0",
-            lang: "Rust",
+            stack: [
+                { icon: SiRust, color: "text-orange-500" }
+            ],
             icon: Lock,
             color: "text-emerald-400",
             accent: "border-emerald-500/50",
@@ -107,7 +119,17 @@ export const Projects = () => {
                         <div className="relative z-10 pt-6 border-t border-stone-200 dark:border-white/5 mt-auto">
                             <div className="flex items-center justify-between text-xs text-stone-500 dark:text-slate-500 font-mono">
                                 <span>{project.approach}</span>
-                                <span>{project.lang}</span>
+                                
+                                {/* New Icon Rendering Logic */}
+                                <div className="flex gap-3">
+                                    {project.stack.map((Tech, i) => (
+                                        <Tech.icon 
+                                            key={i} 
+                                            className={`w-5 h-5 ${Tech.color} opacity-70 group-hover:opacity-100 transition-opacity`} 
+                                            title="Language used"
+                                        />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </a>
@@ -116,4 +138,3 @@ export const Projects = () => {
         </section>
     );
 };
-
