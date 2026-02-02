@@ -1,8 +1,37 @@
 import { ArrowUpRight, Database, Lock, Radio, Shield } from "lucide-react";
-import { SiPython, SiJinja, SiRust, SiGo } from "react-icons/si";
+import { SiPython, SiJinja, SiRust, SiGo, SiGnubash } from "react-icons/si"; // Added SiGnubash for Assembly representation
 
 export const Projects = () => {
     const projects = [
+        {
+            title: "Anti-Debug-Framework",
+            status: "Beta",
+            version: "v1.0.0",
+            stack: [
+                { icon: SiRust, color: "text-orange-500" },
+                { icon: SiGnubash, color: "text-stone-400" } 
+            ],
+            icon: Lock,
+            color: "text-rose-500",
+            accent: "border-rose-500/50",
+            problem: "Reverse engineering exposes proprietary logic and sensitive data.",
+            approach: "CPU exception handling, timing analysis & memory guards.",
+            link: "https://github.com/id-root/anti-debug-framework"
+        },
+        {
+            title: "Aegis",
+            status: "Active",
+            version: "v0.1.0",
+            stack: [
+                { icon: SiRust, color: "text-orange-500" }
+            ],
+            icon: Shield,
+            color: "text-sky-400",
+            accent: "border-sky-400/50",
+            problem: "Ensuring host integrity in compromised environments is difficult.",
+            approach: "Runtime trust enforcement and system integrity verification.",
+            link: "https://github.com/id-root/Aegis"
+        },
         {
             title: "MultiLang-Evasion-Framework",
             status: "ACTIVE",
@@ -120,7 +149,7 @@ export const Projects = () => {
                             <div className="flex items-center justify-between text-xs text-stone-500 dark:text-slate-500 font-mono">
                                 <span>{project.approach}</span>
                                 
-                                {/* New Icon Rendering Logic */}
+                               
                                 <div className="flex gap-3">
                                     {project.stack.map((Tech, i) => (
                                         <Tech.icon 
