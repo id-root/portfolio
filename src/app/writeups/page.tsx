@@ -1,8 +1,20 @@
+"use client";
+import { useState } from "react";
 import { Navbar } from "@/components/navbar";
 import { BookOpen, ExternalLink, Calendar } from "lucide-react";
 
 export default function WriteupsPage() {
+    const [activeFilter, setActiveFilter] = useState("All");
+
     const writeups = [
+        {
+            title: "Anti-Debug Framework",
+            category: "Research", 
+            date: "Feb 01, 2026",
+            tags: ["Anti-Debugging", "Systems Programming", "Malware Analysis"],
+            summary: "A comprehensive user-space anti-debugging framework implementing 8 distinct detection techniques spanning timing analysis, memory integrity verification, CPU exception handling, and kernel observer comparison.",
+            link: "https://github.com/id-root/anti-debug-framework/blob/main/docs/WHITEPAPER.pdf"
+        },
         {
             title: "BreachBlocker-Unlocker",
             category: "Write-up",
@@ -37,6 +49,12 @@ export default function WriteupsPage() {
         }
     ];
 
+    const filteredWriteups = activeFilter === "All"
+        ? writeups
+        : writeups.filter(post => post.category === activeFilter);
+
+    const tabs = ["All", "Research", "Write-up"];
+
     return (
         <div className="min-h-screen selection:bg-neon-purple selection:text-white overflow-hidden relative transition-colors duration-300">
             <Navbar />
@@ -46,7 +64,7 @@ export default function WriteupsPage() {
 
             <main className="pt-32 pb-20 px-4 md:px-8 max-w-5xl mx-auto relative z-10">
 
-                <header className="mb-16 text-center">
+                <header className="mb-12 text-center">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-stone-900 dark:text-white">
                         Research & <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">Writeups</span>
                     </h1>
@@ -55,8 +73,25 @@ export default function WriteupsPage() {
                     </p>
                 </header>
 
+                {/* Filter Buttons */}
+                <div className="flex justify-center gap-4 mb-12">
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab}
+                            onClick={() => setActiveFilter(tab)}
+                            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
+                                activeFilter === tab
+                                    ? "bg-red-600 text-white border-red-600 shadow-lg shadow-red-500/25"
+                                    : "bg-white/5 text-stone-600 dark:text-slate-400 border-stone-200 dark:border-white/10 hover:bg-stone-100 dark:hover:bg-white/10"
+                            }`}
+                        >
+                            {tab}
+                        </button>
+                    ))}
+                </div>
+
                 <div className="grid gap-6">
-                    {writeups.map((post, i) => (
+                    {filteredWriteups.map((post, i) => (
                         <a
                             key={i}
                             href={post.link}
@@ -68,7 +103,11 @@ export default function WriteupsPage() {
                             <div className="relative z-10 flex flex-col md:flex-row md:items-start md:justify-between gap-6">
                                 <div className="flex-1">
                                     <div className="flex items-center gap-3 mb-3">
-                                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-accent/10 border border-accent/30 text-accent">
+                                        <span className={`px-3 py-1 rounded-full text-xs font-bold border ${
+                                            post.category === "Research" 
+                                                ? "bg-purple-500/10 border-purple-500/30 text-purple-500" // Different color for Research
+                                                : "bg-accent/10 border-accent/30 text-accent"
+                                        }`}>
                                             {post.category}
                                         </span>
                                         <div className="flex items-center gap-1 text-stone-500 dark:text-slate-500 text-xs font-mono">
@@ -99,10 +138,15 @@ export default function WriteupsPage() {
                             </div>
                         </a>
                     ))}
+                    
+                    {filteredWriteups.length === 0 && (
+                        <div className="text-center py-20 text-stone-500 dark:text-slate-500">
+                            No posts found for this category.
+                        </div>
+                    )}
                 </div>
 
             </main>
         </div>
     );
 }
-
