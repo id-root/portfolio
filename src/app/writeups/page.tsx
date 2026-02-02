@@ -8,12 +8,12 @@ export default function WriteupsPage() {
 
     const writeups = [
         {
-            title: "Anti-Debug Framework",
+            title: "Anti-Debugging",
             category: "Research", 
             date: "Feb 01, 2026",
-            tags: ["Anti-Debugging", "Systems Programming", "Malware Analysis"],
+            tags: ["Reverse Enginnering", "Malware Analysis"],
             summary: "A comprehensive user-space anti-debugging framework implementing 8 distinct detection techniques spanning timing analysis, memory integrity verification, CPU exception handling, and kernel observer comparison.",
-            link: "https://github.com/id-root/anti-debug-framework/blob/main/docs/WHITEPAPER.pdf"
+            link: "https://drive.google.com/file/d/10dDNzYHv313CK0CBSSnMNLdHP4QBConf/view?usp=sharing"
         },
         {
             title: "BreachBlocker-Unlocker",
