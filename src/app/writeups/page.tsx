@@ -13,7 +13,7 @@ export default function WriteupsPage() {
             date: "Feb 01, 2026",
             tags: ["Reverse Enginnering", "Malware Analysis"],
             summary: "A comprehensive user-space anti-debugging framework implementing 8 distinct detection techniques spanning timing analysis, memory integrity verification, CPU exception handling, and kernel observer comparison.",
-            link: "https://drive.google.com/file/d/10dDNzYHv313CK0CBSSnMNLdHP4QBConf/view?usp=sharing"
+            link: "https://www.dropbox.com/scl/fi/3zv5ltaipy6rg5fervwnt/WHITEPAPER.pdf?rlkey=v1dgqtdpqbv4buqkddwb685h2&st=zmetsbss&dl=0"
         },
         {
             title: "BreachBlocker-Unlocker",
