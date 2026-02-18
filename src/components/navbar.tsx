@@ -16,7 +16,7 @@ export const Navbar = () => {
 
     return (
         <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 font-sans">
-            <div className="glass-panel rounded-full px-2 py-2 flex items-center gap-1 md:gap-2 shadow-lg">
+            <div className="glass-panel rounded-full px-2 py-2 flex items-center gap-1 md:gap-2 shadow-lg max-w-[95vw]">
 
                 {/* Logo / Home */}
                 <div className="pl-3 pr-2 flex items-center gap-2 border-r border-stone-200 dark:border-white/10 mr-1">
