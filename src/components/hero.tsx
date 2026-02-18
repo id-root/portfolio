@@ -102,7 +102,7 @@ const TerminalWindow = () => {
                 typeSpeed: 50,
                 showCursor: false,
                 onComplete: () => {
-                    setTimeout(() => setShowOutput(true), 500);
+                    setTimeout(() => setShowOutput(true), 400);
                 }
             });
 
