@@ -9,7 +9,7 @@ export default function AboutPage() {
 
 
             {/* Background Gradients */}
-            <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-red-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[90vw] h-[90vw] md:w-[600px] md:h-[600px] bg-red-500/5 rounded-full blur-[120px] pointer-events-none"></div>
 
             <main className="pt-32 pb-20 px-6 max-w-4xl mx-auto relative z-10">
 
