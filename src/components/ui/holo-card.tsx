@@ -24,7 +24,7 @@ export const HoloCard = ({ children, className = "" }: { children: React.ReactNo
     return (
         <div
             onMouseMove={onMouseMove}
-            className={`relative group bg-white/60 dark:bg-slate-900/40 border border-stone-300/50 dark:border-white/10 overflow-hidden rounded-xl ${className}`}
+            className={`relative group bg-white/40 dark:bg-white/[0.04] backdrop-blur-xl border border-white/50 dark:border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.3)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.05)] overflow-hidden rounded-xl transition-all duration-300 ${className}`}
         >
             {/* Hover Glow Effect */}
             <motion.div
