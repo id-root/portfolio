@@ -13,7 +13,7 @@ export default function WriteupsPage() {
             date: "Feb 01, 2026",
             tags: ["Reverse Enginnering", "Malware Analysis"],
             summary: "A comprehensive user-space anti-debugging framework implementing 8 distinct detection techniques spanning timing analysis, memory integrity verification, CPU exception handling, and kernel observer comparison.",
-            link: "https://www.dropbox.com/scl/fi/3zv5ltaipy6rg5fervwnt/WHITEPAPER.pdf?rlkey=v1dgqtdpqbv4buqkddwb685h2&st=zmetsbss&dl=0"
+            link: "https://library-id-root.vercel.app/publications/anti-debug-framework"
         },
         {
             title: "BreachBlocker-Unlocker",
@@ -21,7 +21,7 @@ export default function WriteupsPage() {
             date: "Dec 25, 2025",
             tags: ["Web Exploitation", "Authentication Bypass"],
             summary: "Extract multiple flags from different apps by chaining enumeration, logic flaws, and authentication bypass techniques to recover stolen funds.",
-            link: "https://github.com/id-root/BreachBlocker-Unlocker"
+            link: "https://library-id-root.vercel.app/publications/breachblocker-unlocker"
         },
         {
             title: "Carrotbane-of-My-Existence",
@@ -29,7 +29,7 @@ export default function WriteupsPage() {
             date: "Dec 20, 2025",
             tags: ["AI", "SMTP"],
             summary: "Understanding AI-powered applications, and chaining creative vulnerability discovery techniques.",
-            link: "https://github.com/id-root/Carrotbane-of-My-Existence"
+            link: "https://library-id-root.vercel.app/publications/carrotbane-of-my-existence"
         },
         {
             title: "Scheme-Catcher",
@@ -37,7 +37,7 @@ export default function WriteupsPage() {
             date: "Dec 15, 2025",
             tags: ["Binary Exploitation", "Reverse Engeneering"],
             summary: "Extracting hidden flags from a stripped binary without execution. Walkthrough of dynamic analysis with gdb",
-            link: "https://github.com/id-root/Scheme-Catcher"
+            link: "https://library-id-root.vercel.app/publications/scheme-catcher"
         },
         {
             title: "Hoppers-Origin",
@@ -45,7 +45,7 @@ export default function WriteupsPage() {
             date: "Dec 10, 2025",
             tags: ["Privilege escalation", "Active Directory"],
             summary: "Initial reconnaissance phase. tracking the 'Hopper' entity across multiple platforms to find the entry point.",
-            link: "https://github.com/id-root/Hoppers-Origin-Writeup"
+            link: "https://library-id-root.vercel.app/publications/hoppers-origin"
         }
     ];
 
