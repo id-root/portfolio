@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { PortalCanvas } from "@/components/portal-model";
+import { MonolithCanvas } from "@/components/monolith-model";
 
 export const About = () => {
     const sectionRef = useRef(null);
@@ -64,7 +64,7 @@ export const About = () => {
                         className="w-full h-full flex items-center justify-center"
                     >
                         <div className="w-full h-full flex items-center justify-center relative z-10">
-                            <PortalCanvas />
+                            <MonolithCanvas />
                         </div>
                     </motion.div>
                 </div>
