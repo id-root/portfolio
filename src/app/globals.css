@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #FDFBF7;
+  --text-primary: #2C2C2C;
+  --text-secondary: #6B6356;
+  --text-muted: #8C8477;
+  --text-light: #FDFBF7;
+}
+
+.dark {
+  --bg-primary: #0f0e0d;
+  --bg-surface: #1a1816;
+  --bg-card: rgba(36, 34, 32, 0.6);
+  --emerald: #059669;
+  --emerald-dark: #064e3b;
+  --emerald-dim: #022c22;
+  --text-primary: #d5c0aa;
+  --text-secondary: #a8a29e;
+  --text-muted: #78716c;
+  --text-light: #1c1917;
+  --text-body: #d1d5db;
+  --border-default: rgba(213, 192, 170, 0.15);
+  --border-accent: rgba(5, 150, 105, 0.3);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif text-text-primary;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-beige-50/70 dark:bg-[#1a1816]/70 backdrop-blur-xl border border-beige-200/50 dark:border-[#d5c0aa]/15;
+    box-shadow: 0 8px 32px rgba(201, 184, 150, 0.1);
+  }
+
+  .dark .glass-panel {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .glass-card {
+    @apply bg-white/60 dark:bg-[#242220]/60 backdrop-blur-xl border border-beige-200/40 dark:border-[#d5c0aa]/15 rounded-2xl transition-all duration-500 ease-out;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
+  }
+
+  .dark .glass-card {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-card:hover {
+    @apply border-accent-caramel/30 dark:border-[#059669]/30;
+    box-shadow: 0 12px 48px rgba(201, 184, 150, 0.15);
+  }
+
+  .dark .glass-card:hover {
+    box-shadow: 0 12px 48px rgba(5, 150, 105, 0.15);
+  }
+
+  /* Lenis smooth scroll */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
