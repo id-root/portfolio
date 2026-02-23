@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Cormorant_Garamond, DM_Sans, Outfit } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -37,6 +38,7 @@ export default function RootLayout({
                         </SmoothScroll>
                     </GlitchProvider>
                 </ThemeProvider>
+                <SpeedInsights />
             </body>
         </html>
     );
