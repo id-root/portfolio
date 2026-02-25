@@ -17,8 +17,8 @@ export const Projects = () => {
             title: "Aegis",
             status: "Active v0.1",
             icon: Shield,
-            problem: "Forensic analysts lack a single deterministic,covert channel detection, and payload embedding.",
-            approach: "F5 DCT steganography + Adaptive edge-guided embedding, AES-256-GCM encryption, and HMAC-signed forensic audit trails.",
+            problem: "Forensic analysts lack ,covert channel detection, and payload embedding.",
+            approach: "F5 DCT steganography + Adaptive edge-guided embedding,HMAC-signed forensic audit trails.",
             link: "https://github.com/id-root/Aegis"
         },
         {
