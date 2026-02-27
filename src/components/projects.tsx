@@ -38,12 +38,12 @@ export const Projects = () => {
             link: "https://github.com/id-root/sqli-hunter"
         },
         {
-            title: "LanDrop",
-            status: "Active v1.0",
+            title: "Synapse",
+            status: "Active v2.0",
             icon: Radio,
             problem: "Local network file sharing needs secure alternatives.",
             approach: "Self-hosted file transfer over LAN with encryption.",
-            link: "https://github.com/id-root/LanDrop"
+            link: "https://github.com/id-root/Synapse"
         },
         {
             title: "spectre",
