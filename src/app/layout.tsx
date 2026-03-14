@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
+            <head>
+                <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
+            </head>
             <body className={`${playfair.variable} ${garamond.variable} ${dmSans.variable} ${outfit.variable} font-sans antialiased bg-background text-text-primary selection:bg-accent-caramel selection:text-white overflow-x-hidden`}>
                 <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
                     <GlitchProvider>
