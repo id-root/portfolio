@@ -30,7 +30,7 @@ export default function RootLayout({
                 <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
             </head>
             <body className={`${playfair.variable} ${garamond.variable} ${dmSans.variable} ${outfit.variable} font-sans antialiased bg-background text-text-primary selection:bg-accent-caramel selection:text-white overflow-x-hidden`}>
-                <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+                <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
                     <GlitchProvider>
                         <SmoothScroll>
                             <ElegantBackground />
