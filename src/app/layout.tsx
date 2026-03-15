@@ -11,8 +11,8 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
     title: {
-        default: "Vector — Security Researcher & Developer",
-        template: "%s | Vector Portfolio",
+        default: "Portfolio",
+        template: "%s | Vector",
     },
     description: "A student exploring cyber-space, creating elegant zero-trust solutions. Offensive security research, custom tooling in Rust & Python, and deep-dive whitepapers.",
     keywords: ["security researcher", "offensive security", "Rust", "Python", "portfolio", "CTF", "reverse engineering", "penetration testing"],
