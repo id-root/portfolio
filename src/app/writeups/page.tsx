@@ -149,7 +149,7 @@ export default function WriteupsPage() {
     const tabs = ["All", "Research", "Write-up"];
 
     return (
-        <div className="min-h-screen selection:bg-accent-caramel selection:text-white transition-colors duration-500 font-sans">
+        <div className="min-h-screen selection:bg-accent-caramel selection:text-white transition-colors duration-500 font-sans overflow-x-hidden">
             {/* Ambient Lighting */}
             <div className="fixed top-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-accent-caramel/5 blur-[140px] pointer-events-none" />
 
