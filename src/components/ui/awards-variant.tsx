@@ -19,7 +19,7 @@ export const AwardsVariant = () => {
     <section className="bg-transparent px-4 sm:px-8 pb-0">
       <ContainerScroll className="w-full h-[140vh]" totalCards={myAccomplishments.length}>
         <div className="sticky left-0 top-0 h-svh w-full flex items-center justify-center overflow-hidden">
-          <CardsContainer className="mx-auto w-full max-w-2xl md:max-w-3xl h-[400px] md:h-[500px]">
+          <CardsContainer className="mx-auto w-[85%] sm:w-[90%] max-w-sm sm:max-w-2xl md:max-w-3xl h-[400px] md:h-[500px]">
             {myAccomplishments.map((item, index) => (
               <CardTransformed
                 key={item.tempId}
