@@ -149,13 +149,16 @@ export default function WriteupsPage() {
     const tabs = ["All", "Research", "Write-up"];
 
     return (
-        <div className="min-h-screen selection:bg-accent-caramel selection:text-white transition-colors duration-500 font-sans overflow-x-hidden">
-            {/* Ambient Lighting */}
-            <div className="fixed top-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-accent-caramel/5 blur-[140px] pointer-events-none" />
+        <div className="min-h-screen selection:bg-accent-caramel selection:text-white transition-colors duration-500 font-sans overflow-x-hidden w-full relative">
+            
+            {/* Ambient Lighting Wrapper - HARD CLIPPED TO PREVENT ZOOM */}
+            <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[-20%] right-[-10%] w-[60vw] min-w-[300px] h-[60vw] min-h-[300px] rounded-full bg-accent-caramel/5 blur-[140px]" />
+            </div>
 
             {/* Dark-mode-only Sparkles */}
             {isDark && (
-                <div className="fixed inset-0 w-full h-full z-0 pointer-events-none opacity-40">
+                <div className="fixed inset-0 w-full h-full z-0 pointer-events-none opacity-40 overflow-hidden">
                     <SparklesCore
                         id="writeups-sparkles"
                         background="transparent"
