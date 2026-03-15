@@ -50,7 +50,7 @@ export default function AboutPage() {
 
             <main className="relative z-10 w-full">
                 {/* ─── PREMIUM HERO / NARRATIVE ─── */}
-                <section className="pt-40 md:pt-48 pb-20 px-6 max-w-7xl mx-auto">
+                <section className="pt-40 md:pt-48 pb-20 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-[1fr_1fr] gap-16 lg:gap-24 items-start">
                         {/* Left Side: Massive Clean Typography */}
                         <motion.div
@@ -112,7 +112,7 @@ export default function AboutPage() {
                 <ArsenalSection />
 
                 {/* ─── LOOPING ACCOMPLISHMENTS ─── */}
-                <section className="pt-12 pb-0 px-4 bg-gradient-to-b from-transparent via-stone-50/30 dark:via-stone-900/20 to-transparent">
+                <section className="pt-12 pb-0 bg-gradient-to-b from-transparent via-stone-50/30 dark:via-stone-900/20 to-transparent">
                     <div className="max-w-7xl mx-auto text-center mb-8">
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
@@ -176,7 +176,7 @@ function ArsenalSection() {
     ];
 
     return (
-        <section className="py-24 px-6 border-y border-stone-100 dark:border-stone-800/50 bg-stone-50/50 dark:bg-[#0c0b0a]/50">
+        <section className="py-24 px-4 sm:px-6 md:px-8 border-y border-stone-100 dark:border-stone-800/50 bg-stone-50/50 dark:bg-[#0c0b0a]/50">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-16">
                     <h2 className="text-3xl md:text-4xl font-serif font-medium text-stone-900 dark:text-white">
@@ -184,7 +184,7 @@ function ArsenalSection() {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                     {categories.map((cat, idx) => (
                         <motion.div
                             key={cat.title}
@@ -196,7 +196,7 @@ function ArsenalSection() {
                                 cat.highlighted 
                                     ? "bg-white dark:bg-stone-900 border-accent-caramel/40 dark:border-accent-caramel/30 shadow-[0_0_30px_rgba(196,167,125,0.1)] dark:shadow-[0_0_30px_rgba(196,167,125,0.08)] hover:border-accent-caramel/60 dark:hover:border-accent-caramel/50" 
                                     : "bg-white dark:bg-stone-900 border-stone-200 dark:border-stone-800/80 hover:border-accent-caramel/30 dark:hover:border-accent-caramel/30"
-                            } ${cat.cols}`}
+                            } ${cat.cols} min-w-0`}
                         >
                             <div className={`flex flex-col h-full ${cat.horizontal ? "md:flex-row md:items-center md:gap-12" : ""}`}>
                                 <div className={`${cat.horizontal ? "md:w-1/3 mb-6 md:mb-0" : "mb-8 "}`}>
