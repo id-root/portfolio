@@ -145,8 +145,6 @@ export default function ContactInteractive() {
                             backgroundSize: '100% 2px',
                         }}
                     />
-                    {/* Subtle vignette */}
-                    <div className="absolute inset-0 pointer-events-none z-20 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,0,0,0.3)_100%)]" />
 
                     {/* Header */}
                     <div className="bg-[#1a1a1a] px-4 py-3 flex items-center justify-between border-b border-stone-800 relative z-10">
