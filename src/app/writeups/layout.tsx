@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Library — Whitepapers & Write-ups",
+    title: "Library",
     description: "A curated collection of deep-dive security research papers and detailed CTF write-up methodologies by Vector.",
 };
 
