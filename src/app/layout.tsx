@@ -42,6 +42,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <head>
                 <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
+                <link rel="preload" href="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode" as="fetch" crossOrigin="anonymous" />
             </head>
             <body className={`${playfair.variable} ${garamond.variable} ${dmSans.variable} ${outfit.variable} font-sans antialiased bg-background text-text-primary selection:bg-accent-caramel selection:text-white overflow-x-hidden`}>
                 <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
