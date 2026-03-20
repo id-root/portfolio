@@ -3,7 +3,9 @@
 import { Hero } from "@/components/hero";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
-import { SparklesCore } from "@/components/ui/sparkles";
+import dynamic from "next/dynamic";
+
+const SparklesCore = dynamic(() => import("@/components/ui/sparkles").then((mod) => mod.SparklesCore), { ssr: false });
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { SmoothScroll } from "@/components/smooth-scroll";
