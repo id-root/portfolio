@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "A student exploring cyber-space, creating elegant zero-trust solutions. Offensive security research, custom tooling in Rust & Python, and deep-dive whitepapers.",
     keywords: ["security researcher", "offensive security", "Rust", "Python", "portfolio", "CTF", "reverse engineering", "penetration testing"],
     openGraph: {
-        title: "Vector — Security Researcher & Developer",
+        title: "Vector",
         description: "Offensive security research, custom tooling, and deep-dive whitepapers.",
         type: "website",
         locale: "en_US",
