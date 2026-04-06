@@ -12,6 +12,8 @@ interface RotatingEarthProps {
   scrollProgress?: MotionValue<number>
 }
 
+import globeData from "../../../public/globe-data.json"
+
 export default function RotatingEarth({
   width = 800,
   height = 600,
@@ -134,10 +136,8 @@ export default function RotatingEarth({
       try {
         setIsLoading(true)
 
-        const response = await fetch("/globe-data.json")
-        if (!response.ok) throw new Error("Failed to load land data")
-
-        const payload = await response.json()
+        // Statically use imported JSON instead of fetch() to avoid Vercel 404s
+        const payload = globeData as any
         landFeatures = payload.landFeatures
 
         payload.dots.forEach((dot: [number, number]) => {
@@ -146,7 +146,8 @@ export default function RotatingEarth({
 
         render()
         setIsLoading(false)
-      } catch {
+      } catch (err) {
+        console.error(err);
         setError("Failed to load land map data")
         setIsLoading(false)
       }
