@@ -58,6 +58,7 @@ const WriteupCard = ({
     link,
     index,
     totalItems,
+    isLastOdd,
 }: {
     title: string;
     category: string;
@@ -67,10 +68,12 @@ const WriteupCard = ({
     link: string;
     index: number;
     totalItems: number;
+    isLastOdd?: boolean;
 }) => {
     return (
         <motion.div
             layout
+            className={cn(isLastOdd && "md:col-span-2")}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.98 }}
@@ -90,7 +93,7 @@ const WriteupCard = ({
                     </span>
                 </div>
 
-                {/* Title with accent bar */}
+                {/* Title */}
                 <div className="text-xl font-bold mb-3 relative z-10 flex items-center">
                     <span className="inline-block text-text-primary font-gamja transition-colors duration-500">
                         {title}
@@ -114,7 +117,7 @@ const WriteupCard = ({
                     </span>
                 </div>
 
-                {/* Arrow icon */}
+                {/* Arrow */}
                 <ArrowUpRight className="absolute top-8 right-8 w-5 h-5 opacity-0 -translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 text-[var(--brand-accent)] group-hover:rotate-12 z-10" />
             </LiquidGlassCard>
         </motion.div>
@@ -124,6 +127,7 @@ const WriteupCard = ({
 export default function WriteupsPage() {
     const [activeFilter, setActiveFilter] = useState("All");
     const [mounted, setMounted] = useState(false);
+
     useEffect(() => { setMounted(true); }, []);
 
     const filteredWriteups = activeFilter === "All"
@@ -134,14 +138,15 @@ export default function WriteupsPage() {
 
     return (
         <div className="min-h-screen selection:bg-accent-caramel selection:text-white transition-colors duration-500 font-gamja overflow-x-hidden w-full relative">
-            
-            {/* Ambient Lighting Wrapper - HARD CLIPPED TO PREVENT ZOOM */}
+
+            {/* Ambient Lighting */}
             <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-20%] right-[-10%] w-[60vw] min-w-[300px] h-[60vw] min-h-[300px] rounded-full bg-brand-primary/5 blur-[140px]" />
             </div>
 
             <main className="relative z-10 w-full max-w-5xl mx-auto px-6 pt-40 md:pt-48 pb-0">
-                {/* ─── HEADER ─── */}
+
+                {/* Header */}
                 <header className="mb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -157,7 +162,7 @@ export default function WriteupsPage() {
                     </motion.div>
                 </header>
 
-                {/* ─── FILTER TABS ─── */}
+                {/* Tabs */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -179,17 +184,24 @@ export default function WriteupsPage() {
                     ))}
                 </motion.div>
 
-                {/* ─── CONTENT GRID ─── */}
+                {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
                     <AnimatePresence mode="popLayout">
-                        {filteredWriteups.map((post, idx) => (
-                            <WriteupCard
-                                key={post.title}
-                                {...post}
-                                index={idx}
-                                totalItems={filteredWriteups.length}
-                            />
-                        ))}
+                        {filteredWriteups.map((post, idx) => {
+                            const isLastOdd =
+                                filteredWriteups.length % 2 !== 0 &&
+                                idx === filteredWriteups.length - 1;
+
+                            return (
+                                <WriteupCard
+                                    key={post.title}
+                                    {...post}
+                                    index={idx}
+                                    totalItems={filteredWriteups.length}
+                                    isLastOdd={isLastOdd}
+                                />
+                            );
+                        })}
                     </AnimatePresence>
                 </div>
 
