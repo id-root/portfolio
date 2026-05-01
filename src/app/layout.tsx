@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Outfit, Gamja_Flower, Figtree } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const dmSans = DM_Sans({ subsets: ["latin"], display: "swap", variable: "--font-dm-sans" });
@@ -58,6 +59,7 @@ export default function RootLayout({
                     </GlitchProvider>
                 </PreloaderWrapper>
                 <SpeedInsights />
+                <Analytics />
             </body>
         </html>
     );
