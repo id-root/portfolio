@@ -119,7 +119,7 @@ export const Hero = () => {
                                     transition={{ duration: 1, delay: 1, ease: "easeOut" }}
                                     className="max-w-lg mb-10"
                                 >
-                                    <p className="text-xl md:text-3xl font-gamja text-[rgba(255,248,237,0.85)] font-light leading-relaxed drop-shadow-sm">
+                                    <p className="text-xl md:text-3xl font-outfit text-[rgba(255,248,237,0.85)] font-light leading-relaxed drop-shadow-sm">
                                         A Student exploring <span className="text-white font-medium drop-shadow-md">cyber-space</span>, creating elegant zero-trust solutions and waiting for AGI.
                                     </p>
                                 </motion.div>
