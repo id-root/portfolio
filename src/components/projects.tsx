@@ -16,10 +16,10 @@ const projects = [
         link: "https://github.com/id-root/anti-debug-framework",
         description:
             "A comprehensive user-space anti-debugging framework implementing 8 distinct detection techniques spanning timing analysis, memory integrity verification, CPU exception handling, and kernel observer comparison.",
-        languages: ["C"],
-        stars: 2,
+        languages: ["Rust", "Assembly", "Shell"],
+        stars: 1,
         forks: 0,
-        topics: ["anti-debugging", "reverse-engineering", "security", "malware-analysis", "cpu-exceptions"],
+        topics: ["debugging", "malware-analysis", "research", "research-and-development", "reverse-engineering"],
     },
     {
         title: "Aegis",
@@ -33,7 +33,7 @@ const projects = [
         languages: ["Python"],
         stars: 1,
         forks: 0,
-        topics: ["forensics", "steganography", "image-analysis", "cryptography", "cli", "security"],
+        topics: ["metadata", "forensic-analysis", "stegnography"],
     },
     {
         title: "MultiLang-Evasion",
@@ -44,10 +44,10 @@ const projects = [
         link: "https://github.com/id-root/MultiLang-Evasion-Framework",
         description:
             "Multi-language evasion framework implementing Hell's Gate direct syscalls, ETW patching, and advanced process injection techniques across C, Rust, and Go to bypass modern endpoint detection and response systems.",
-        languages: ["Rust", "C", "Go"],
-        stars: 3,
+        languages: ["Jinja", "Python", "Rust", "Shell", "Dockerfile"],
+        stars: 1,
         forks: 1,
-        topics: ["evasion", "syscalls", "edr-bypass", "red-team", "security-tools"],
+        topics: ["blue-teaming", "etw", "evasion", "framework", "offensive-security", "payload", "red-teaming"],
     },
     {
         title: "sqli-hunter",
@@ -59,9 +59,9 @@ const projects = [
         description:
             "High-performance SQL injection detection engine built in async Rust. Features heuristic payload generation, blind/time-based detection, and minimal network footprint for stealthy vulnerability assessment.",
         languages: ["Rust"],
-        stars: 5,
-        forks: 2,
-        topics: ["sql-injection", "rust", "security-tools", "penetration-testing", "async"],
+        stars: 0,
+        forks: 0,
+        topics: ["cli", "evasion", "exploitation", "offensive-security", "red-team", "sql", "sqlite3", "webapp"],
     },
     {
         title: "Synapse",
@@ -72,10 +72,10 @@ const projects = [
         link: "https://github.com/id-root/Synapse",
         description:
             "Self-hosted, encrypted file transfer application for local area networks. Implements end-to-end encryption with zero-configuration discovery for seamless, secure file sharing without cloud dependencies.",
-        languages: ["TypeScript", "JavaScript"],
+        languages: ["Kotlin", "Go", "JavaScript", "CSS", "TypeScript", "HTML"],
         stars: 1,
-        forks: 0,
-        topics: ["file-transfer", "lan", "encryption", "self-hosted", "typescript"],
+        forks: 1,
+        topics: ["android", "android-app", "android-application", "file-sharing", "file-transfer", "kotlin", "linux", "offline", "open-source", "share", "tools", "windows"],
     },
     {
         title: "spectre",
@@ -86,10 +86,10 @@ const projects = [
         link: "https://github.com/id-root/spectre",
         description:
             "Rust-based, high-concurrency web scraping engine designed to bypass modern Web Application Firewalls (WAFs) and challenge pages (like Cloudflare). It utilizes a hybrid approach, combining lightweight TLS-impersonated HTTP requests with heavy-duty headless browser automation when necessary.",
-        languages: ["Rust"],
+        languages: ["Rust", "HCL", "Dockerfile"],
         stars: 3,
         forks: 0,
-        topics: ["rust", "waf-bypass", "headless-chrome", "scraping-tool", "security-tools", "tokio"],
+        topics: ["bot-detection-bypass", "cli", "crawler", "hcl", "headless-browsers", "headless-chrome", "http-client", "networking", "offensive-security", "rust", "rust-toolchain", "rustc", "scraping-tool", "security-testing", "security-tools", "tokio", "tui", "waf-bypass"],
     },
     {
         title: "Isotope",
@@ -103,7 +103,7 @@ const projects = [
         languages: ["Rust"],
         stars: 0,
         forks: 0,
-        topics: ["tor", "post-quantum", "cryptography", "anonymous-communication", "privacy"],
+        topics: ["chat-application", "cryptography", "cybersecurity", "encryption", "kill-switch", "network-security", "redteam-tools", "rust", "tor", "tor-hidden-services", "tui"],
     },
 ];
 
