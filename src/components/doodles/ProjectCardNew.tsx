@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const CARD_PALETTES = [
@@ -16,6 +17,8 @@ const LANG_COLORS: Record<string, string> = {
     Python: "#3572A5", Rust: "#dea584", TypeScript: "#3178c6",
     JavaScript: "#f1e05a", C: "#555555", "C++": "#f34b7d",
     Go: "#00ADD8", Markdown: "#083fa1",
+    HTML: "#e34f26", Jinja: "#b41717", Kotlin: "#7F52FF", CSS: "#1572B6",
+    Assembly: "#6E4C13", Shell: "#89e051", Dockerfile: "#2496ed", HCL: "#844FBA",
 };
 
 /* ── Rich SVG icons mapped by key ── */
@@ -33,20 +36,37 @@ function CardIcon({ name, size = 22 }: { name: string; size?: number }) {
     }
 }
 
-/* ── Language icon SVGs (devicon-style) ── */
+const LANG_SLUGS: Record<string, string> = {
+    Python: "python", Rust: "rust", TypeScript: "typescript",
+    JavaScript: "javascript", C: "c", "C++": "cplusplus",
+    Go: "go", HTML: "html5", CSS: "css3", Kotlin: "kotlin",
+    Jinja: "jinja", Shell: "gnubash", Dockerfile: "docker",
+    Assembly: "assembly", HCL: "hashicorp", Markdown: "markdown",
+};
+
 function LangIcon({ lang, size = 16 }: { lang: string; size?: number }) {
     const color = LANG_COLORS[lang] || "#9a8b78";
-    const s = { width: size, height: size };
-    switch (lang) {
-        case "Python": return (<svg {...s} viewBox="0 0 24 24"><path d="M11.9 1C6.4 1 6.8 3.3 6.8 3.3l.01 2.4h5.2v.7H4.6S1 6 1 11.8s3.1 5.6 3.1 5.6h1.9v-2.7s-.1-3.1 3.1-3.1h5.3s3 0 3-2.9V4s.5-3-5.5-3zm-2.9 1.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" fill={color}/><path d="M12.1 23c5.5 0 5.1-2.3 5.1-2.3l-.01-2.4h-5.2v-.7h7.4S23 18 23 12.2s-3.1-5.6-3.1-5.6h-1.9v2.7s.1 3.1-3.1 3.1H9.6s-3 0-3 2.9V20s-.5 3 5.5 3zm2.9-1.7a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" fill={color}/></svg>);
-        case "Rust": return (<svg {...s} viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke={color} strokeWidth="1.5"/><path d="M12 6v2m0 8v2M6 12h2m8 0h2m-1.4-4.6L15.2 8.8m-6.4 6.4l-1.4 1.4m0-8.2L8.8 8.8m6.4 6.4l1.4 1.4" stroke={color} strokeWidth="1.5" strokeLinecap="round"/><circle cx="12" cy="12" r="3" fill={color}/></svg>);
-        case "TypeScript": return (<svg {...s} viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2" fill={color}/><path d="M15.5 10v1.5h-2V18h-2v-6.5h-2V10h6zm3 0v8" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/></svg>);
-        case "JavaScript": return (<svg {...s} viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2" fill={color}/><path d="M10 10v6.5c0 1-1 1.5-2 1.5m8-8v4.5c0 2.5-4 2.5-4 0" stroke="#312726" strokeWidth="1.5" strokeLinecap="round"/></svg>);
-        case "C": return (<svg {...s} viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke={color} strokeWidth="1.5"/><path d="M16 8a6 6 0 1 0 0 8" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round"/></svg>);
-        case "C++": return (<svg {...s} viewBox="0 0 24 24"><circle cx="10" cy="12" r="8" fill="none" stroke={color} strokeWidth="1.3"/><path d="M14.5 8a5 5 0 1 0 0 8" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round"/><path d="M18 12h4M20 10v4M14 12h4M16 10v4" stroke={color} strokeWidth="1" strokeLinecap="round"/></svg>);
-        case "Go": return (<svg {...s} viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z" fill="none" stroke={color} strokeWidth="1.5"/><circle cx="12" cy="12" r="3" fill={color}/></svg>);
-        default: return (<svg {...s} viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill={color}/></svg>);
+    const slug = LANG_SLUGS[lang];
+    const [failed, setFailed] = useState(false);
+
+    if (!slug || failed) {
+        return (
+            <svg width={size} height={size} viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5" fill={color} />
+            </svg>
+        );
     }
+
+    return (
+        <img
+            src={`https://cdn.simpleicons.org/${slug}`}
+            width={size}
+            height={size}
+            alt={lang}
+            onError={() => setFailed(true)}
+            style={{ verticalAlign: "middle", display: "block" }}
+        />
+    );
 }
 
 interface ProjectCardNewProps {
