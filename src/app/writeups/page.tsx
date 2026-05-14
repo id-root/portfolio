@@ -176,21 +176,6 @@ export default function WriteupsPage() {
                                 idx === filteredWriteups.length - 1;
                             const isExpanded = expandedTitle === post.title;
 
-                            /* ── Order-swap for right-column cards ── */
-                            const isRightCol = idx % 2 === 1;
-                            const pairIdx = isRightCol ? idx - 1 : idx + 1;
-                            const pairExpanded =
-                                pairIdx >= 0 &&
-                                pairIdx < filteredWriteups.length &&
-                                expandedTitle === filteredWriteups[pairIdx].title;
-
-                            let order = idx;
-                            if (isExpanded && isRightCol) {
-                                order = idx - 1;
-                            } else if (pairExpanded && !isRightCol) {
-                                order = idx + 1;
-                            }
-
                             return (
                                 <motion.div
                                     key={post.title}
@@ -200,7 +185,6 @@ export default function WriteupsPage() {
                                     animate="visible"
                                     exit={{ opacity: 0, scale: 0.97 }}
                                     layout
-                                    style={{ order }}
                                     transition={{
                                         layout: {
                                             type: "spring",
@@ -210,9 +194,8 @@ export default function WriteupsPage() {
                                         },
                                     }}
                                     className={cn(
-                                        "block",
-                                        isLastOdd && "md:col-span-2",
-                                        isExpanded && "md:col-span-2"
+                                        "block items-start h-fit",
+                                        isLastOdd && "md:col-span-2"
                                     )}
                                 >
                                     <WriteupCardNew
